@@ -1,0 +1,22 @@
+{
+    "id": "1",
+        "name": "ABC",
+        "status": true,
+        "type": "Parent",
+        "marketingPreferences": {
+            "emailOptIn": true,
+            "marketingOptIn": true,
+            "postalOptIn": true,
+            "smsOptIn": true
+        },
+        "users": [
+            {
+                "id": "1",
+                "username": "gq5@pencill.co.uk",
+                "email": "gq5@pencill.co.uk",
+                "blocked": false,
+                "confirmed": true,
+                "provider": "local"
+            }
+        ]
+}

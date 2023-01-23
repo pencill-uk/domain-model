@@ -1,0 +1,27 @@
+{
+    "id": "1",
+    "blocked": false,
+    "confirmed": true,
+    "createdAt": "2022-11-06T21:41:18.045Z",
+    "email": "ram@pencill.co.uk",
+    "provider": "local",
+    "updatedAt": "2022-11-25T17:06:40.173Z",
+    "username": "ram@pencill.co.uk",
+    "account": 
+    {
+        "id": "1",
+        "createdAt": "2022-11-06T19:51:48.797Z",
+        "marketingPreferences": 
+        {
+            "id": "1",
+            "emailOptIn": true,
+            "marketingOptIn": true,
+            "postalOptIn": false,
+            "smsOptIn": true
+        },
+        "name": "Ram",
+        "status": true,
+        "type": "Parent",
+        "updatedAt": "2023-01-14T12:06:52.385Z"
+    }
+}

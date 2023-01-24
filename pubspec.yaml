@@ -1,6 +1,6 @@
 name: domain
 description: A new Flutter package project.
-version: 0.0.2
+version: 0.0.3
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
@@ -25,6 +25,7 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

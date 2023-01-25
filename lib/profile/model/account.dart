@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
+import 'package:equatable/equatable.dart';
 
-class Account {
+class Account extends Equatable {
   final String id;
   final String name;
   final bool status;
   final String type;
   final MarketingPreferences marketingPreferences;
   final List<User> users;
-  Account({
+  const Account({
     this.id = '',
     this.name = '',
     this.status = false,
@@ -69,39 +69,27 @@ class Account {
       Account.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() {
-    return 'Account(id: $id, name: $name, status: $status, type: $type, marketingPreferences: $marketingPreferences, users: $users)';
-  }
+  bool get stringify => true;
 
   @override
-  bool operator ==(covariant Account other) {
-    if (identical(this, other)) return true;
-
-    return other.id == id &&
-        other.name == name &&
-        other.status == status &&
-        other.type == type &&
-        other.marketingPreferences == marketingPreferences &&
-        listEquals(other.users, users);
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        name.hashCode ^
-        status.hashCode ^
-        type.hashCode ^
-        marketingPreferences.hashCode ^
-        users.hashCode;
+  List<Object> get props {
+    return [
+      id,
+      name,
+      status,
+      type,
+      marketingPreferences,
+      users,
+    ];
   }
 }
 
-class MarketingPreferences {
+class MarketingPreferences extends Equatable {
   final bool emailOptIn;
   final bool marketingOptIn;
   final bool postalOptIn;
   final bool smsOptIn;
-  MarketingPreferences({
+  const MarketingPreferences({
     this.emailOptIn = false,
     this.marketingOptIn = false,
     this.postalOptIn = false,
@@ -146,37 +134,20 @@ class MarketingPreferences {
       MarketingPreferences.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() {
-    return 'MarketingPreferences(emailOptIn: $emailOptIn, marketingOptIn: $marketingOptIn, postalOptIn: $postalOptIn, smsOptIn: $smsOptIn)';
-  }
+  bool get stringify => true;
 
   @override
-  bool operator ==(covariant MarketingPreferences other) {
-    if (identical(this, other)) return true;
-
-    return other.emailOptIn == emailOptIn &&
-        other.marketingOptIn == marketingOptIn &&
-        other.postalOptIn == postalOptIn &&
-        other.smsOptIn == smsOptIn;
-  }
-
-  @override
-  int get hashCode {
-    return emailOptIn.hashCode ^
-        marketingOptIn.hashCode ^
-        postalOptIn.hashCode ^
-        smsOptIn.hashCode;
-  }
+  List<Object> get props => [emailOptIn, marketingOptIn, postalOptIn, smsOptIn];
 }
 
-class User {
+class User extends Equatable {
   final String id;
   final String username;
   final String email;
   final bool blocked;
   final bool confirmed;
   final String provider;
-  User({
+  const User({
     this.id = '',
     this.username = '',
     this.email = '',
@@ -231,29 +202,17 @@ class User {
       User.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() {
-    return 'User(id: $id, username: $username, email: $email, blocked: $blocked, confirmed: $confirmed, provider: $provider)';
-  }
+  bool get stringify => true;
 
   @override
-  bool operator ==(covariant User other) {
-    if (identical(this, other)) return true;
-
-    return other.id == id &&
-        other.username == username &&
-        other.email == email &&
-        other.blocked == blocked &&
-        other.confirmed == confirmed &&
-        other.provider == provider;
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        username.hashCode ^
-        email.hashCode ^
-        blocked.hashCode ^
-        confirmed.hashCode ^
-        provider.hashCode;
+  List<Object> get props {
+    return [
+      id,
+      username,
+      email,
+      blocked,
+      confirmed,
+      provider,
+    ];
   }
 }
